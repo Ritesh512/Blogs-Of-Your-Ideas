@@ -20,7 +20,8 @@ app.use(express.static("public"));
 // const posts=[];
 
 //database
-mongoose.connect("mongodb+srv://admin-ritesh:Ritesh%40512@cluster0.i6tidkm.mongodb.net/?retryWrites=true&w=majority/blogs");
+db = "mongodb+srv://admin-ritesh:Ritesh%40512@cluster0.i6tidkm.mongodb.net/?retryWrites=true&w=majority/blogs";
+mongoose.connect(db);
 const postSchema = mongoose.Schema({
   title: String,
   body: String
