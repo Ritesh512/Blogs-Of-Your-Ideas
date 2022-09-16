@@ -20,7 +20,7 @@ app.use(express.static("public"));
 // const posts=[];
 
 //database
-db = "mongodb+srv://admin-ritesh:Ritesh%40512@cluster0.i6tidkm.mongodb.net/?retryWrites=true&w=majority/blogs";
+db = "mongodb+srv://<username>:<password>@cluster0.i6tidkm.mongodb.net/?retryWrites=true&w=majority/blogs";
 mongoose.connect(db);
 const postSchema = mongoose.Schema({
   title: String,
@@ -72,14 +72,7 @@ app.post("/compose",function(req, res){
 
 app.get("/posts/:postId",function(req, res){
   
-  // const postName = _.lowerCase(req.params.postName);
-  // Blog.forEach(function(post){
-  //   const postTitle = _.lowerCase(post.title); 
-   
-  //   if(postTitle === postName){
-  //     res.render("post",{title:post.title,body:post.body});
-  //   }
-  // });
+  
   const postId =  req.params.postId;
   Blog.findOne({_id: postId},function(err, blog){
     if(!err){
